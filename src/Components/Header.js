@@ -9,9 +9,24 @@ export default function () {
         
           <Navbar.Brand href="#home">Navbar</Navbar.Brand>
           <Nav className="me-auto navbar_wrapper ">
-                <Link to='/login'>Login</Link>
+            {
+              localStorage.getItem('user-info')?
+              <>
+              <Link to='/navigate'>navigate</Link>
+                <Link to='/viewproduct'>viewproduct</Link>
+                <Link to='/upload'>upload</Link>
+                <Link to='/list'>list</Link>
+                
+                
+              </>
+              :
+              <>
+              <Link to='/login'>Login</Link>
                 <Link to='/register'>register</Link>
-                <Link to='/navigate'>navigate</Link>
+              </>
+            }
+                
+                
             
           </Nav>
         

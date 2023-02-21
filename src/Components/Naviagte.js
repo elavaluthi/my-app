@@ -1,7 +1,14 @@
 import React from 'react'
+import Header from './Header'
 
 export default function Naviagte() {
   return (
-    <div>Naviagte</div>
+    
+    <div>
+      <Header />
+      Naviagte
+
+      
+    </div>
   )
 }

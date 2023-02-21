@@ -1,10 +1,14 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
+import Header from './Header'
 
 export default function Register() {
+  
 
   const[name,setName]=useState("")
   const[password,setPassword]=useState("")
   const[emailId,setEmailId]=useState("")
+  const navigate=useNavigate()
 
   async function signup()
   {
@@ -25,9 +29,13 @@ export default function Register() {
   )
   result= await result.json()
   console.warn("result",result)
+  
   }
   return (
+    <>
+    <Header/>
    <div className="col-sm-6 offset-sm-3">
+    <h1>Registerage</h1>
     <input type ="text" value={name} onChange={(e)=>setName(e.target.value )}className="form-control"placeholder="name"/>
     <br />
     <input type ="password"value={password} onChange={(e)=>setPassword(e.target.value )} className="form-control"placeholder="password" />
@@ -35,7 +43,12 @@ export default function Register() {
     <input type ="text" value={emailId}
    onChange={(e)=>setEmailId(e.target.value )} className="form-control"placeholder="email" />
     <br />
-    <button onClick={signup} className='btn btn-primary' >signup</button>
-   </div>    
+    <button  onClick={() => {
+                  signup();
+                  navigate('/login');
+                }} className='btn btn-primary' >signup</button>
+   </div>   
+   </> 
+   
   )  
 }
