@@ -16,6 +16,8 @@ export default function () {
                 <Link to='/viewproduct'>viewproduct</Link>
                 <Link to='/upload'>upload</Link>
                 <Link to='/list'>list</Link>
+                <Link to='/taskbar'>task</Link>
+                <Link to='/taskbartry'>taskbartry</Link>
                 
                 
               </>

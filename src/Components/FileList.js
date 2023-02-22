@@ -6,7 +6,7 @@ function FileList() {
   useEffect(() => {
     const fetchFiles = async () => {
       try {
-        const res = await fetch('/api/files');
+        const res = await fetch('http://localhost:8080/api/files');
         const data = await res.json();
         setFiles(data);
       } catch (err) {
@@ -18,7 +18,7 @@ function FileList() {
 
   const handleFileDownload = async (file) => {
     try {
-      const res = await fetch('/api/files/' + file._id);
+      const res = await fetch('http://localhost:8080/api/files' + file._id);
       const blob = await res.blob();
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement('a');

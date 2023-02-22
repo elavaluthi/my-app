@@ -9,6 +9,9 @@ import Naviagte from './Components/Naviagte'
 import Viewproduct from './Components/Viewproduct'
 import DocumentUpload from './Components/DocumentUpload';
 import FileList from './Components/FileList';
+import TaskBar from './Components/TaskBar';
+import Taskbartry from './Components/Taskbartry';
+
 
 
 
@@ -29,6 +32,8 @@ function App() {
           <Route path='/viewproduct' element={<Viewproduct/>}/>
           <Route path='/upload' element={<DocumentUpload/>}/>
           <Route path='/list' element={<FileList/>}/>
+          <Route path='/taskbar' element={<TaskBar/>}/>
+          <Route path='/taskbartry' element={<Taskbartry/>}/>
           
           
         
